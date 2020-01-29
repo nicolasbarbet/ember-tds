@@ -13,8 +13,11 @@ export default EmberObject.extend({
     style : computed('size', function(){
       let size = this.get('size');
       if(size < 0)
-        return "color:red;";
-      return "color:black;";
+        return "alert-danger";
+      if(size < 50)
+        return "alert-warning";
+      else
+        return "alert-primary"
     }),
     alertVisible : computed('info', function(){
       let info = this.get('info');
