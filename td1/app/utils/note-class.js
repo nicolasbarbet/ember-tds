@@ -12,12 +12,12 @@ export default EmberObject.extend({
     }),
     style : computed('size', function(){
       let size = this.get('size');
-      if(size < 0)
-        return "alert-danger";
+      if(size < 20)
+        return "alert alert-danger";
       if(size < 50)
-        return "alert-warning";
+        return "alert alert-warning";
       else
-        return "alert-primary"
+        return "alert alert-info"
     }),
     alertVisible : computed('info', function(){
       let info = this.get('info');

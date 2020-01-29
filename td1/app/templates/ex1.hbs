@@ -1,22 +1,30 @@
-<div class="panel panel-primary">
-    
-    <div class="panel-heading">Note :</div>
+<div class="container">
+    <div class="panel panel-primary">
+        
+        <div class="panel-heading">Note :</div>
 
-    <div class="panel-body">
-        <Textarea @value={{model.content}} @cols="80" @rows="6" />
+        <div class="panel-body">
+            <Textarea @value={{model.content}} @cols="80" @rows="6" maxlength={{model.MAX}}/>
 
-        <p class={{model.style}}>{{model.size}}</p>
+            <p class={{model.style}}>Nombre de caractères restants : {{model.size}}</p>
+
+        
+            <div>
+                <button onclick={{action 'save' model}} class="btn btn-success">Enregistrer</button>
+                <button onclick={{action 'clear' model}} class="btn btn-danger">Effacer</button>
+            </div>
+
+            {{#if model.alertVisible}}
+                <div>
+                    <p>Note enregistrée</p>
+                </div>
+            {{/if}}
+
+        </div>
+        
+        
 
     </div>
-    <button class="btn btn-success">Enregistrer</button>
-
-    {{#if model.alertVisible}}
-        <div>
-            <p>Note enregistrée</p>
-        </div>
-    {{/if}}
-    
-
 </div>
 
 
