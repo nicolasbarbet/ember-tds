@@ -1,3 +1,23 @@
-<Textarea @value={{model.content}}/>
+<div class="panel panel-primary">
+    
+    <div class="panel-heading">Note :</div>
+
+    <div class="panel-body">
+        <Textarea @value={{model.content}} @cols="80" @rows="6" />
+
+        <p style={{model.style}}>{{model.size}}</p>
+
+    </div>
+    <button class="btn-success">Enregistrer</button>
+
+    {{#if model.alertVisible}}
+        <div>
+            <p>Note enregistrée</p>
+        </div>
+    {{/if}}
+    
+
+</div>
+
 
 {{outlet}}
