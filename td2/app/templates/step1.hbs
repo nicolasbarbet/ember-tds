@@ -1,1 +1,20 @@
+
+<div class="container">
+    <div class="panel panel-primary">
+
+        <div class="panel-heading"><h1>Selectionnez vos produits :</h1></div>
+
+        <MultiSelect @elements = {{model.dispoItems}} @selectedIds = {{model.dispoItemsIds_}}/>
+
+        <button {{action ""}}> &rsaquo; </button>
+        <button {{action ""}}> &rsaquo;&rsaquo; </button>
+        <button {{action ""}}> &lsaquo; </button>
+        <button {{action ""}}> &lsaquo;&lsaquo; </button>
+
+        <MultiSelect @elements = {{model.includedItems}} @selectedIds = {{model.includedItemsIds_}}/>
+    </div>
+
+
+</div>
+
 {{outlet}}
