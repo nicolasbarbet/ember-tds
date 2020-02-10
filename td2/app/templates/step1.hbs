@@ -14,7 +14,13 @@
         <MultiSelect @elements = {{model.includedItems}} @selectedIds = {{model.includedItemsIds_}}/>
     </div>
 
-
+    <button {{action "toggleStep" model}}>
+        {{#if model.step}}
+            Étape suivante
+        {{else}}
+            Étape précédente
+        {{/if}}
+    </button>
 </div>
 
 {{outlet}}

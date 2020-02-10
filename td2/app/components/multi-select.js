@@ -22,5 +22,5 @@ export default Component.extend({
   doubleClick(event){
       const selected = $(event.target).val();
       this.sendAction('dblClick',selected,this.get('id'));
-  }
+  },
 });
