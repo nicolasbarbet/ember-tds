@@ -50,8 +50,8 @@ export default Route.extend({
         return Services.create({
             dispoItems : items,
             includedItems : [],
-            includedDispoItemsIDS_ : [],
-            dispoItemsIDS_ : []
+            includedItemsIds_ : [],
+            dispoItemsIds_ : []
         })
     }
 });

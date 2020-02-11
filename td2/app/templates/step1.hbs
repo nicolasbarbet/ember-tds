@@ -6,12 +6,13 @@
 
         <MultiSelect @elements = {{model.dispoItems}} @selectedIds = {{model.dispoItemsIds_}}/>
 
-        <button {{action ""}}> &rsaquo; </button>
-        <button {{action ""}}> &rsaquo;&rsaquo; </button>
-        <button {{action ""}}> &lsaquo; </button>
-        <button {{action ""}}> &lsaquo;&lsaquo; </button>
+        <button {{action "addToIncluded" model}}> ▶| </button>
+        <button {{action "addAllToIncluded" model}}> ▶▶|  </button>
+        <button {{action "removeFromIncluded" model}}> |◀ </button>
+        <button {{action "RemoveAllFromIncluded" model}}> |◀◀ </button>
 
         <MultiSelect @elements = {{model.includedItems}} @selectedIds = {{model.includedItemsIds_}}/>
+      <p>{{model.includedItems.length}} produits inclus</p>
     </div>
 
     <button {{action "toggleStep" model}}>
