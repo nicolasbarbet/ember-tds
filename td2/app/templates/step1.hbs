@@ -1,27 +1,46 @@
-
+{{#if model.step}}
 <div class="container">
     <div class="panel panel-primary">
-
         <div class="panel-heading"><h1>Selectionnez vos produits :</h1></div>
-
-        <MultiSelect @elements = {{model.dispoItems}} @selectedIds = {{model.dispoItemsIds_}}/>
-
-        <button {{action "addToIncluded" model}}> ▶| </button>
-        <button {{action "addAllToIncluded" model}}> ▶▶|  </button>
-        <button {{action "removeFromIncluded" model}}> |◀ </button>
-        <button {{action "RemoveAllFromIncluded" model}}> |◀◀ </button>
-
-        <MultiSelect @elements = {{model.includedItems}} @selectedIds = {{model.includedItemsIds_}}/>
-      <p>{{model.includedItems.length}} produits inclus</p>
+        <div class="container-fluid">
+            <div class="row">
+                <MultiSelect @elements = {{model.dispoItems}} @selectedIds = {{model.dispoItemsIds_}}/>
+                <div>
+                    <button class="glyphicon glyphicon-step-forward" {{action "addToIncluded" model}}></button>
+                    <button class="glyphicon glyphicon-fast-forward" {{action "addAllToIncluded" model}}></button>
+                    <button class="glyphicon glyphicon-step-backward" {{action "removeFromIncluded" model}}></button>
+                    <button class="glyphicon glyphicon-fast-backward" {{action "RemoveAllFromIncluded" model}}></button>
+                </div>
+                <MultiSelect @elements = {{model.includedItems}} @selectedIds = {{model.includedItemsIds_}}/>
+            </div>
+        </div>
+    <p>{{model.includedItems.length}} produits selectionnés</p>
     </div>
+</div>
+{{else}}
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading"><h1>Vos choix :</h1></div>
+    </div>
+</div>
+{{/if}}
 
-    <button {{action "toggleStep" model}}>
+
+
+
+
+
+
+
+
+
+    <button class="navbar-link" {{action "toggleStep" model}}>
         {{#if model.step}}
-            Étape suivante
+            Étape suivante <span class="glyphicon glyphicon-arrow-right"></span>
         {{else}}
-            Étape précédente
+            <span class="glyphicon glyphicon-arrow-left"></span> Étape précédente
         {{/if}}
     </button>
-</div>
+
 
 {{outlet}}
