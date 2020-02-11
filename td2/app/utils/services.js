@@ -9,13 +9,24 @@ export default EmberObject.extend({
     includedItemsIds_ : [],
     dispoItems_ : computed('dispoItemsIds_.[]', function(){
       let ids = this.get('dispoItemsIds_');
-      console.log(ids);
       let dispoItems = this.get('dispoItems');
-      let tab = dispoItems.filter(elt => dispoItems.id = "1");
+      let tab = [];
+      dispoItems.forEach(function (item) {
+          if(ids.includes(item.id)){
+            tab.push(item);
+          }
+      });
       return tab;
     }),
     includedItems_: computed("includedItemsIds_.[]", function(){
-        let ids = this.get('includedItemsIds_.[]');
-        return ids;
+        let ids = this.get('includedItemsIds_');
+        let includedItems = this.get('includedItems');
+        let tab = [];
+        includedItems.forEach(function (item) {
+          if(ids.includes(item.id)){
+            tab.push(item);
+          }
+        });
+        return tab;
     })
 });
