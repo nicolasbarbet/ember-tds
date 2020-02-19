@@ -1,4 +1,5 @@
-import DS from 'ember-data';
-
-export default DS.JSONAPIAdapter.extend({
+import Adapter from 'ember-local-storage/adapters/local';
+ 
+export default Adapter.extend({
+  modelNamespace: 'contact-app'
 });
