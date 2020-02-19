@@ -4,7 +4,7 @@
         <div class="panel-heading"><h1>Selectionnez vos produits :</h1></div>
         <div class="container-fluid">
             <div class="row">
-                <MultiSelect @elements = {{model.dispoItems}} @selectedIds = {{model.dispoItemsIds_}}/>
+                <MultiSelect @elements = {{model.dispoItems}} @selectedIds = {{model.dispoItemsIds_}} @dblClick={{"move"}}/>
                 <div>
                     <button class="glyphicon glyphicon-step-forward" {{action "addToIncluded" model}}></button>
                     <button class="glyphicon glyphicon-fast-forward" {{action "addAllToIncluded" model}}></button>

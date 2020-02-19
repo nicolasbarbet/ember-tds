@@ -53,5 +53,31 @@ export default Route.extend({
             includedItemsIds_ : [],
             dispoItemsIds_ : []
         })
+    },
+
+    action:{
+        addTo(src,dest,what){
+            dest.pushObjects(what);
+            src.removeObjects(what);
+            what.clear();
+        },
+        move(selectedId, divId){
+            console.log("Clic !");
+            let mod = this.modelFor(this.routeName);
+/*
+            let dispoItems_ = model.get("dispoItems_");
+            let includedItems =  model.get("includedItems");
+            let dispoItems = model.get("dispoItems");
+
+            dispoItems_.forEach(function (item) {
+                if(!includedItems.includes(item))
+                  includedItems.pushObject(item);
+            });
+
+            //On retire les items présents dans dispoItems_
+            dispoItems = dispoItems.filter(item => !dispoItemsIds.includes(selectedId));
+            model.set("dispoItems", dispoItems);
+            */
+        }
     }
 });
