@@ -4,7 +4,7 @@ import Contacts from 'td3/utils/contact-class';
 
 
 export default Route.extend({
-  /*
+  /* EXEMPLE AVEC MARTIN
   model(){
     let store=this.get('store');
     let contact=store.createRecord('contact', {
@@ -19,30 +19,19 @@ export default Route.extend({
   model(){
     let storedContacts = this.get('store').findAll('contact');
     return Contacts.create(storedContacts);
+  },
+
+  actions:{
+    save:function (datas) {
+      let store = this.get('store');
+      let contact = store.createRecord('contact',datas);
+      contact.save().then(()=>this.transitionTo('contacts'));
+    },
+    delete(contact){
+
+    },
+    cancelDeletion(deleteds){
+
+    }
   }
 })
-
-/*
-export default Route.extend({
-    model(){
-        let storedContacts = this.get('store').findAll('contact');
-        return Contact.create(storedContacts)
-    },
-
-    action:{
-        delete(contact){
-
-        },
-        cancelDeletion(deleteds){
-
-        },
-        save(contact){
-            let self=this;
-            contact.save().then(function(){
-                self.transitionTo('contacts');
-            });
-        }
-    },
-
-});
- */

@@ -1,3 +1,8 @@
 <h3>Ajout d'un contact</h3>
+<Input value={{model.nom}} placeholder="Entrez un nom"/>
+<Input value={{model.prenom}} placeholder="Entrez un prénom"/>
+<Input value={{model.email}} placeholder="Adresse email"/>
+<button class="btn btn-primary" {{action "save" model}}>Valider</button>
+<LinkTo class="btn btn-primary" @route="contacts">Annuler</LinkTo>
 
 {{outlet}}

@@ -6,12 +6,18 @@
   <div class="panel panel-primary">
     <div class="panel-heading"><h1>Contacts</h1></div>
     <div class="container-fluid">
-      <Input @value={{model.filter}} placeholder="Filtrer"/>
+      <Input value={{model.filter}} placeholder="Filtrer"/>
       {{#each model.datas as |contact|}}
-        <p>{{contact.nom}} {{contact.prenom}}</p>
+        <br>
+        <span>{{contact.nom}} {{contact.prenom}} {{contact.email}}</span>
+        <button>Valider</button>
+        <LinkTo class="" @route="contacts.edit" @model={{contact}}>
+        </LinkTo>
+
       {{/each}}
     </div>
   </div>
+  
 </div>
 
 {{outlet}}

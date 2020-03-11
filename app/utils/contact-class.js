@@ -15,6 +15,11 @@ export default EmberObject.extend({
       })
     }
     return notDeleted;
+  }),
+
+  deleteds : "",
+  deletedsCount : computed('deleted.length', function(){
+
   })
 });
 

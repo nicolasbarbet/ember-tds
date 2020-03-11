@@ -8,5 +8,10 @@ export default Route.extend({
         return Contact.create({
 
         })
+    },
+    actions:{
+      addContact(datas){
+
+      }
     }
 });
