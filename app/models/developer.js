@@ -1,5 +1,6 @@
 import Model from '@ember-data/model';
+import DS from 'ember-data';
 
-export default class DeveloperModel extends Model {
-
-}
+export default Model.extend({
+    identity: DS.attr('string')
+});

@@ -1,4 +1,10 @@
 import Route from '@ember/routing/route';
 
-export default class DevelopersRoute extends Route {
-}
+export default Route.extend({
+    model() {
+      return this.get('store').findAll('developer');
+    },
+    actions : {
+        
+    }
+  });
