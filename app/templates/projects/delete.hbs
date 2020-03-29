@@ -1,0 +1,12 @@
+<div class="ui icon message">
+  <i class="question circle icon"></i>
+  <div class="content">
+    <div class="header">
+        <span>Confirmez-vous la suppression de "{{model.nom}}" ?
+        <LinkTo class="ui button" @route="developers">Annuler</LinkTo>
+        <button {{action "delete" model}} class="ui button green">Confirmer</button>
+        </span>
+    </div>
+  </div>
+</div>
+{{outlet}}

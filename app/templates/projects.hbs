@@ -1,1 +1,42 @@
-{{outlet}}
+<LinkTo @route="projects">
+  <h1 class="ui header">
+    <span class="content">models/Project
+      <span class="sub header">Administration de données</span>
+    </span>
+  </h1>
+</LinkTo>
+<div class="ui segment">
+  <LinkTo @route="projects.new" class="ui button">Ajouter un nouveau projet</LinkTo>
+  <div>
+    <br>
+    {{outlet}}
+  </div>
+  
+  <table class="ui single line table">
+    <thead>
+      <tr>
+        <th>Nom du projet</th>
+        <th>Description</th>
+        <th>Date de début</th>
+        <th>Date de fin</th>
+        <th class="right aligned"></th>
+      </tr>
+    </thead>
+    <tbody>
+    {{#each @model as |projet|}}
+      <tr>
+        <td>{{projet.nom}}</td>
+        <td>{{projet.description}}</td>
+        <td>{{moment-format projet.datedebut "DD/MM/YYYY"}}</td>
+        <td>{{moment-format projet.datefin "DD/MM/YYYY"}}</td>
+        
+        <td class="right aligned">
+          <LinkTo class="circular ui red basic icon button" @model={{projet}} @route="projects.delete"  >
+            <i class="icon close icon"></i>
+          </LinkTo>
+        </td>
+      </tr>
+    {{/each}}
+    </tbody>
+  </table>
+</div>
