@@ -1,2 +1,44 @@
-<h1>TD4 Dev</h1>
-{{outlet}}
+<LinkTo @route="developers">
+  <h1 class="ui header">
+    <span class="content">
+      models/Developer
+      <span class="sub header">Administration de données</span>
+    </span>
+  </h1>
+</LinkTo>
+<div class="ui segment">
+  <LinkTo @route="developers.new" class="ui button">Ajouter un nouveau développeur</LinkTo>
+  <div>
+    <br>
+    {{outlet}}
+  </div>
+  
+  <table class="ui selectable single line table">
+    <thead>
+    <tr>
+      <th>Identité</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#each @model as |dev|}}
+    
+      <tr>
+        <td>{{dev.identity}}</td>
+        <td class="right aligned">
+          <LinkTo title="Modifier" @route="developers.edit" @model={{dev}} class="circular ui basic icon button" >
+            <i class="icon edit"></i>
+          </LinkTo>
+          <LinkTo title="Supprimer"  @route="developers.delete" @model={{dev}} class="circular ui inverted red icon button">
+            <i class="icon times"></i>
+          </LinkTo>
+        </td>
+      </tr>
+      
+    {{else}}
+      <tr>
+        <td class="center aligned">Aucun développeur enregistré</td>
+      </tr>
+    {{/each}}
+    </tbody>
+  </table>
+</div>

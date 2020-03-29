@@ -1,5 +1,6 @@
 <div class="ui input focus">
-    <Input @type="text" placeholder="Prénom Nom" @value={{model.identity}}/>
+    <Input @type="text" placeholder="Nom Prénom" @value={{model.identity}}/>
 </div>
 <button class="ui primary button" {{action "save" model}}>Valider</button>
+
 {{outlet}}
