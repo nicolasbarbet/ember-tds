@@ -1,4 +1,9 @@
 {{!-- The following component displays Ember's default welcome message. --}}
 {{!-- Feel free to remove this! --}}
-<h1>TD4 application</h1>
+<h1>TD4</h1>
+<div class="ui primary menu">
+  <LinkTo class="item" @route="/" >Accueil</LinkTo>
+  <LinkTo class="item" @route="developers">Développeurs</LinkTo>
+  <LinkTo class="item" @route="projects">Projets</LinkTo>
+</div>
 {{outlet}}
